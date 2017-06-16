@@ -58,10 +58,8 @@ function countSum(dane) {
         var y = x.sort(); // tu będzie ["a", "a", "c", "c", "e", "e", "e", "f", "j", "l", "m", "n", "o", "p", "p", "p", "p", "t", "u", "w", "x", "y", "y", "y", "z"]
         var a = y.byCount(); // tu uporządkowane wg częstotliwości ["p", "e", "y", "a", "c", "l", "m", "n", "z", "f", "t", "u", "w", "x", "j", "o"]
         var b = a.slice(0, 5);
-        var c = b.toString();
-        var re = /,/gi;
-        var d = c.replace(re, ""); //dostaniemy 5 najczęściej występujących liter - niestety jeśli dwie litery występuja taką samą ilość razy to nie są pokazywane w kolejnośc alfabetycznej
-        finall.push(d)
+        var c = b.join('');
+        finall.push(c)
     }
 
     for (i = 0; i < checksum.length; i++) {
