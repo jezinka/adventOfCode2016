@@ -29,10 +29,10 @@ function countSum(dane) {
 
 
     for (i = 0; i < instructions.length; i++) {
-
-        encrypted.push(instructions[i].substring(0, instructions[i].length - 10));
-        id.push(parseInt(instructions[i].substring(instructions[i].length - 10, instructions[i].length - 7))); // od razu zmiana na liczbę, żeby nie było problemu przy sumowaniu
-        checksum.push(instructions[i].substring(instructions[i].length - 6, instructions[i].length - 1))
+        var instruction = instructions[i];
+        encrypted.push(instruction.match(/^[a-z]+/)[0]);
+        id.push(parseInt(instruction.match(/\d+/)[0]));
+        checksum.push(instruction.match(/\[([a-z]{5})\]/)[1])
     }
 
 
