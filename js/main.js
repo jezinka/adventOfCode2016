@@ -85,4 +85,13 @@ function test() {
     }
 }
 
+function test_equal_occurence_of_letters() {
+    var data = "molgbzqfib-bdd-mrozexpfkd-289[bdfmo]";
+    if (countSum(data) === 289) {
+        console.log("Wynik testu prawidłowy")
+    } else {
+        console.log("Wynik testu nieprawidłowy")
+    }
+}
+
 
