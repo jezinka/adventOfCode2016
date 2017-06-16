@@ -55,8 +55,7 @@ function countSum(dane) {
             });
         };
         var x = encrypted[i].split("");
-        var y = x.sort(); // tu będzie ["a", "a", "c", "c", "e", "e", "e", "f", "j", "l", "m", "n", "o", "p", "p", "p", "p", "t", "u", "w", "x", "y", "y", "y", "z"]
-        var a = y.byCount(); // tu uporządkowane wg częstotliwości ["p", "e", "y", "a", "c", "l", "m", "n", "z", "f", "t", "u", "w", "x", "j", "o"]
+        var a = x.byCount(); // tu uporządkowane wg częstotliwości ["p", "e", "y", "a", "c", "l", "m", "n", "z", "f", "t", "u", "w", "x", "j", "o"]
         var b = a.slice(0, 5);
         var c = b.join('');
         finall.push(c)
