@@ -61,14 +61,15 @@
     }
 
     for (i = 0; i < checksum.length; i++) {
-
         if (checksum[i] === finall[i]) {
-
             sumId += id[i]
+        } else {
+            console.log(checksum[i] + " <> " + finall[i]);
         }
     }
 
     // 89274 - zły wynik
+    console.log(sumId);
 </script>
 </body>
 </html>
