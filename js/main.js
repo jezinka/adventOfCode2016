@@ -39,25 +39,25 @@ function countSum(dane) {
     for (i = 0; i < encrypted.length; i++) {
 
         Array.prototype.byCount = function () {
-            var L = this.length, o = {};
-            for (var i = 0; i < L; i++) {
-                var itm = this[i];
-                if (!itm) {
+            var array_length = this.length, dict = {};
+            for (var i = 0; i < array_length; i++) {
+                var letter = this[i];
+                if (!letter) {
                     continue
                 }
 
-                if (o[itm] === undefined) {
-                    o[itm] = 1
+                if (dict[letter] === undefined) {
+                    dict[letter] = 1
                 } else {
-                    ++o[itm]
+                    ++dict[letter]
                 }
             }
 
-            var keys = Object.keys(o);
+            var keys = Object.keys(dict);
 
             return keys.sort(function (a, b) {
-                if (o[b] !== o[a]) {
-                    return o[b] - o[a];
+                if (dict[b] !== dict[a]) {
+                    return dict[b] - dict[a];
                 }
                 return a.charCodeAt(0) - b.charCodeAt(0);
             });
