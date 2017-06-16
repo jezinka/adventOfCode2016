@@ -34,15 +34,8 @@ function solution() {
 }
 
 function countSum(dane) {
-    var re = /-/gi;
-    dane = dane.trim();
-    /*pozbycie się białych znakow z początku i końca */
-    dane = dane.replace(/ {2,}/g, " "); //zastąpienie podwójnych spacji pojedyncza
-    var dane2 = dane.replace(re, "");
-    /*mamy teraz bez "-"*/
-    var instructions = dane2.split(" ");
-    /* instructions wygląda: "aczupnetwpmfyyjopalcexpye977[peyac]" - teraz posprawdzać czy to jest prawdziwy pokój;
-     jeśli tak to wyodrębnić numer- slice(length-10, length-7) ?? bo zawsze w tym samym miejscu od końca jest numer - poprzedzające go stringi mają różną długość*/
+
+    var instructions = dane.trim().replace(/ {2,}/g, " ").replace(/-/gi, "").split(" ");
 
     var sumId = 0;
 
