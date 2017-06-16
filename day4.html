@@ -47,7 +47,10 @@
             }
             for (var p in o) a[a.length] = p;
             return a.sort(function (a, b) {
-                return o[b] - o[a];
+                if (o[b] !== o[a]) {
+                    return o[b] - o[a];
+                }
+                return a.charCodeAt(0) - b.charCodeAt(0);
             });
         };
         var x = encrypted[i].split("");
