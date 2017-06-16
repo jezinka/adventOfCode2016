@@ -62,11 +62,10 @@ function countSum(dane) {
                 return a.charCodeAt(0) - b.charCodeAt(0);
             });
         };
-        var x = encrypted[i].split("");
-        var a = x.byCount(); // tu uporządkowane wg częstotliwości ["p", "e", "y", "a", "c", "l", "m", "n", "z", "f", "t", "u", "w", "x", "j", "o"]
-        var b = a.slice(0, 5);
-        var c = b.join('');
-        finall.push(c)
+        var letters_table = encrypted[i].split("");
+        var sorted_letters_table = letters_table.byCount();
+        var counted_checksum = sorted_letters_table.slice(0, 5).join('');
+        finall.push(counted_checksum)
     }
 
     for (i = 0; i < checksum.length; i++) {
