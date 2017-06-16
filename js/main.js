@@ -39,15 +39,23 @@ function countSum(dane) {
     for (i = 0; i < encrypted.length; i++) {
 
         Array.prototype.byCount = function () {
-            var itm, a = [], L = this.length, o = {};
+            var L = this.length, o = {};
             for (var i = 0; i < L; i++) {
-                itm = this[i];
-                if (!itm) continue;
-                if (o[itm] == undefined) o[itm] = 1;
-                else ++o[itm];
+                var itm = this[i];
+                if (!itm) {
+                    continue
+                }
+
+                if (o[itm] === undefined) {
+                    o[itm] = 1
+                } else {
+                    ++o[itm]
+                }
             }
-            for (var p in o) a[a.length] = p;
-            return a.sort(function (a, b) {
+
+            var keys = Object.keys(o);
+
+            return keys.sort(function (a, b) {
                 if (o[b] !== o[a]) {
                     return o[b] - o[a];
                 }
@@ -66,7 +74,7 @@ function countSum(dane) {
             sumId += id[i]
         }
         /* else {
-            console.log(checksum[i] + " <> " + finall[i]);
+         console.log(checksum[i] + " <> " + finall[i]);
          }*/
     }
 
