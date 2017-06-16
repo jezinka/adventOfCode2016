@@ -39,10 +39,10 @@ function countSum(data) {
     var sumId = 0;
 
     for (var i = 0; i < instructions.length; i++) {
-        var instruction = instructions[i];
-        var encrypted = instruction.match(/^[a-z]+/)[0];
-        var id = parseInt(instruction.match(/\d+/)[0]);
-        var checksum = instruction.match(/\[([a-z]{5})\]/)[1];
+        var grouped_instruction = instructions[i].match(/([a-z]+)(\d+)\[([a-z]{5})\]/);
+        var encrypted = grouped_instruction[1];
+        var id = parseInt(grouped_instruction[2]);
+        var checksum = grouped_instruction[3];
 
         var letters_table = encrypted.split("");
         var sorted_letters_table = letters_table.byCount();
